@@ -1,0 +1,6 @@
+[submodule "lib/gfx"]
+	path = lib/gfx
+	url = https://github.com/5aitama/Gfx.git
+[submodule "lib/cglm"]
+	path = lib/cglm
+	url = https://github.com/recp/cglm.git
