@@ -26,7 +26,9 @@ void MeshRenderer::setupRenderPipeline() {
     for(size_t i = 0; i < _bufferUniformsLen; i++)
         _bufferUniforms[i] = _material.getUniform(i).getRawUniformBuffer();
 
-    GfxRenderPipelineParams params = GfxRenderPipelineParamsDefault;
+    GfxRenderPipelineParams params; // = GfxRenderPipelineParamsDefault;
+    params.entryPointFrag           = "fs_main";
+    params.entryPointVert           = "vs_main";
     params.uniforms                 = _bufferUniforms;
     params.uniformsLen              = _bufferUniformsLen;
     params.vertexBufferLayout       = &_mesh.getVertexBufferLayout();

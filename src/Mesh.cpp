@@ -22,14 +22,13 @@ Mesh::Mesh(const I2DRenderer* renderer, const float* vertices, size_t vertLen, c
 
     GfxLayoutBufferAttribute* layoutVertexAttributes = new GfxLayoutBufferAttribute[2];
 
-    layoutVertexAttributes[0] = (GfxLayoutBufferAttribute) { .format = GfxLayoutBufferAttributeFormat_Float32x2 };
-    layoutVertexAttributes[1] = (GfxLayoutBufferAttribute) { .format = GfxLayoutBufferAttributeFormat_Float32x3 };
+    layoutVertexAttributes[0].format = GfxLayoutBufferAttributeFormat_Float32x2;
+    layoutVertexAttributes[1].format = GfxLayoutBufferAttributeFormat_Float32x3;
 
-    GfxLayoutBuffer layoutVertexBuffer = {
-        .stride         = sizeof(float) * 5,
-        .attributes     = layoutVertexAttributes,
-        .attributesLen  = 2,
-    };
+    GfxLayoutBuffer layoutVertexBuffer;
+    layoutVertexBuffer.stride         = sizeof(float) * 5;
+    layoutVertexBuffer.attributes     = layoutVertexAttributes;
+    layoutVertexBuffer.attributesLen  = 2;
 
     _vBufferLayout = layoutVertexBuffer;
 }
